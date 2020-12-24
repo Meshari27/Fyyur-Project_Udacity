@@ -1,0 +1,34 @@
+2020-12-22 13:19:46,805 INFO: errors [in /root/FSND/projects/01_fyyur/starter_code/app.py:592]
+2020-12-22 13:20:12,759 ERROR: Exception on /venues/create [GET] [in /usr/lib/python3/dist-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/usr/lib/python3/dist-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/lib/python3/dist-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/root/FSND/projects/01_fyyur/starter_code/app.py", line 262, in create_venue_form
+    form = VenueForm()
+  File "/usr/lib/python3/dist-packages/wtforms/form.py", line 212, in __call__
+    return type.__call__(cls, *args, **kwargs)
+  File "/usr/lib/python3/dist-packages/flask_wtf/form.py", line 87, in __init__
+    super(FlaskForm, self).__init__(formdata=formdata, **kwargs)
+  File "/usr/lib/python3/dist-packages/wtforms/form.py", line 278, in __init__
+    self.process(formdata, obj, data=data, **kwargs)
+  File "/usr/lib/python3/dist-packages/wtforms/form.py", line 132, in process
+    field.process(formdata)
+  File "/usr/lib/python3/dist-packages/wtforms/csrf/core.py", line 43, in process
+    self.current_token = self.csrf_impl.generate_csrf_token(self)
+  File "/usr/lib/python3/dist-packages/flask_wtf/csrf.py", line 139, in generate_csrf_token
+    return generate_csrf(
+  File "/usr/lib/python3/dist-packages/flask_wtf/csrf.py", line 33, in generate_csrf
+    secret_key = _get_config(
+  File "/usr/lib/python3/dist-packages/flask_wtf/csrf.py", line 128, in _get_config
+    raise RuntimeError(message)
+RuntimeError: A secret key is required to use CSRF.
